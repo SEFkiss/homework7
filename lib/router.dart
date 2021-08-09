@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_work_7/screens/about_artist_screen.dart';
 import 'package:home_work_7/screens/artists_screen.dart';
 import 'package:home_work_7/screens/home_screen.dart';
+import 'package:home_work_7/screens/not_found_screen.dart';
 
 class FluroRouter {
   static fluro.FluroRouter router = fluro.FluroRouter();
@@ -23,6 +24,11 @@ class FluroRouter {
       link: params.containsKey('link') ? params['link'][0].toString() : '',
       index: params.containsKey('index') ? int.parse(params['index'][0]) : 0,
     );
+  });
+  // Обработчик нот фаунд
+  static final routeNotFoundHandler = fluro.Handler(
+      handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return NotFoundScreen();
   });
 
 // Инициализация роутов, с анимэйшином
