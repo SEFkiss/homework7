@@ -21,7 +21,8 @@ class ReusebleDrawer extends StatelessWidget {
               ),
               tileColor: Colors.blue[100],
               onTap: () {
-                Navigator.of(context).pushNamed('/');
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/', (route) => false);
               },
             ),
             SizedBox(
@@ -38,7 +39,8 @@ class ReusebleDrawer extends StatelessWidget {
               ),
               tileColor: Colors.blue[100],
               onTap: () {
-                Navigator.of(context).pushNamed('/artists');
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/artists', (route) => false);
               },
             ),
           ],
